@@ -1,0 +1,392 @@
+/* --- Global Variables --- */
+:root {
+    --color-primary-bg: #1A1A2E; /* Deep Indigo */
+    --color-secondary-bg: #2C394B; /* Dark Slate Blue */
+    --color-accent-1: #FF8C00; /* Dark Orange */
+    --color-accent-2: #FFD700; /* Gold */
+    --color-light-text: #E0E0E0;
+    --color-white-text: #FFFFFF;
+    --color-border: #4A4A6A;
+    --color-error: #dc3545; /* Red for errors */
+}
+
+/* --- Base Styles & Reset --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-primary-bg);
+    line-height: 1.6;
+    color: var(--color-light-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    max-width: 700px; /* Slightly narrower for checkout forms */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+/* --- Header Banner --- */
+.header-banner {
+    background-color: var(--color-secondary-bg);
+    padding: 30px 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.header-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 38px;
+    color: var(--color-white-text);
+    line-height: 1.2;
+    margin: 0;
+    padding: 0 15px; /* Add some horizontal padding */
+}
+
+.highlight-yellow {
+    color: var(--color-accent-2); /* Gold for yellow highlight */
+}
+
+/* --- Checkout Content & Card --- */
+.checkout-content {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.checkout-card {
+    background-color: var(--color-secondary-bg); /* Dark slate blue for the card */
+    padding: 40px 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+.offer-value {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 32px;
+    color: var(--color-white-text);
+    margin-bottom: 10px;
+}
+
+.highlight-red {
+    color: var(--color-error); /* Use red for the large striking price */
+}
+
+.offer-price {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 58px; /* Very large for emphasis */
+    color: var(--color-accent-1); /* Orange for the main price */
+    margin-bottom: 40px;
+    line-height: 1; /* Tighter line height */
+}
+
+/* --- SEO Checklist Upsell Section --- */
+.seo-checklist-upsell {
+    background-color: var(--color-primary-bg); /* Darker background */
+    border: 2px dashed var(--color-accent-2); /* Dashed gold border */
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.upsell-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-accent-2); /* Gold title */
+    margin-bottom: 10px;
+}
+
+.upsell-description {
+    font-size: 16px;
+    color: var(--color-light-text);
+    margin-bottom: 20px;
+}
+
+.upsell-checkbox-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.upsell-checkbox-group input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--color-accent-1); /* Accent color for checkbox */
+    cursor: pointer;
+}
+
+.upsell-checkbox-group label {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--color-white-text);
+    cursor: pointer;
+}
+
+
+/* --- Form Styles --- */
+.checkout-form {
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-input {
+    background-color: var(--color-primary-bg); /* Darker background for input */
+    color: var(--color-light-text);
+    border: 1px solid var(--color-border);
+    display: block;
+    width: 100%;
+    padding: 15px 20px; /* More padding */
+    font-size: 18px;
+    line-height: 1.5;
+    border-radius: 8px; /* Slightly more rounded */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input::placeholder {
+    color: rgba(224, 224, 224, 0.5); /* Lighter placeholder text */
+}
+
+.form-input:focus {
+    border-color: var(--color-accent-1);
+    box-shadow: 0 0 0 3px rgba(255, 140, 0, 0.3); /* Subtle glow on focus */
+    outline: none;
+}
+
+.form-input.error {
+    border-color: var(--color-error);
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.3);
+}
+
+.error-message {
+    color: var(--color-error);
+    font-size: 14px;
+    margin-top: 5px;
+    display: block;
+}
+
+
+/* --- Product Summary Table --- */
+.product-summary {
+    margin-bottom: 30px;
+    border-top: 1px solid var(--color-border);
+    padding-top: 20px;
+}
+
+.product-summary table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.product-summary th,
+.product-summary td {
+    padding: 12px 0;
+    font-size: 18px;
+    color: var(--color-light-text);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.product-summary th {
+    font-weight: 600;
+    color: var(--color-white-text);
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+.product-summary td label {
+    font-weight: 500;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.product-summary tfoot td {
+    border-bottom: none; /* No border for total row */
+    font-weight: 700;
+    color: var(--color-white-text);
+    font-size: 20px;
+    padding-top: 20px;
+}
+
+.product-summary tbody tr.hidden {
+    display: none; /* Hide SEO checklist row by default if not selected */
+}
+
+/* --- Submit Button --- */
+.submit-btn {
+    display: flex;
+    flex-direction: column; /* To stack main and sub-text if needed, though only main text used here */
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background: linear-gradient(45deg, var(--color-accent-1), #FF6F00); /* Gradient button */
+    color: var(--color-white-text);
+    border-radius: 50px; /* Pill shape */
+    padding: 15px 40px;
+    font-size: 28px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    width: 100%; /* Full width within its container */
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(45deg, #FF6F00, var(--color-accent-1));
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+    transform: translateY(-3px);
+}
+
+.btn-main-text {
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Pulse Animation for CTA Buttons */
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); }
+    50% { transform: scale(1.02); box-shadow: 0 10px 22px rgba(0, 0, 0, 0.45); }
+    100% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); }
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+/* --- Security Badge --- */
+.security-badge {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-border);
+}
+
+.security-image {
+    max-width: 250px; /* Control size of the badge */
+    margin: 0 auto;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+    .header-title {
+        font-size: 32px;
+    }
+    .offer-value {
+        font-size: 28px;
+    }
+    .offer-price {
+        font-size: 50px;
+    }
+    .form-input {
+        padding: 12px 15px;
+        font-size: 16px;
+    }
+    .submit-btn {
+        font-size: 24px;
+        padding: 12px 30px;
+    }
+    .upsell-title {
+        font-size: 20px;
+    }
+    .upsell-description {
+        font-size: 14px;
+    }
+    .upsell-checkbox-group label {
+        font-size: 16px;
+    }
+    .product-summary th,
+    .product-summary td {
+        font-size: 16px;
+    }
+    .product-summary tfoot td {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .container {
+        padding: 15px;
+    }
+    .header-banner {
+        padding: 20px 0;
+    }
+    .header-title {
+        font-size: 28px;
+    }
+    .checkout-card {
+        padding: 30px 20px;
+    }
+    .offer-value {
+        font-size: 24px;
+    }
+    .offer-price {
+        font-size: 42px;
+    }
+    .product-summary th,
+    .product-summary td {
+        font-size: 14px;
+    }
+    .product-summary tfoot td {
+        font-size: 16px;
+    }
+    .submit-btn {
+        font-size: 22px;
+    }
+    .security-image {
+        max-width: 200px;
+    }
+    .upsell-title {
+        font-size: 18px;
+    }
+    .upsell-checkbox-group label {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .header-title {
+        font-size: 22px;
+    }
+    .offer-value {
+        font-size: 20px;
+    }
+    .offer-price {
+        font-size: 36px;
+    }
+    .submit-btn {
+        font-size: 20px;
+        padding: 10px 20px;
+    }
+    .upsell-title {
+        font-size: 16px;
+    }
+}
