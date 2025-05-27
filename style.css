@@ -1,195 +1,220 @@
-/* --- CSS Variables for Easy Color Changes --- */
+/* --- Global Variables (New Color Palette) --- */
 :root {
-    --primary-color: #3f51b5; /* Indigo Blue - Main CTA, etc. */
-    --accent-color: #ff9800; /* Orange - Highlight, secondary icons */
-    --dark-bg: #212121; /* Dark Grey - Main background */
-    --light-bg: #303030; /* Slightly Lighter Dark Grey - Feature boxes, FAQ items */
-    --text-color: #eceff1; /* Light Grey - General text */
-    --subtle-text: #b0bec5; /* Even Lighter Grey - Descriptions, subtle text */
-    --border-color: #424242; /* Darker grey for borders */
-    --top-bar-bg: #fdd835; /* Amber - Top offer bar */
+    --color-primary-bg: #1A1A2E; /* Deep Indigo */
+    --color-secondary-bg: #2C394B; /* Dark Slate Blue */
+    --color-accent-1: #FF8C00; /* Dark Orange */
+    --color-accent-2: #FFD700; /* Gold */
+    --color-light-text: #E0E0E0;
+    --color-white-text: #FFFFFF;
+    --color-border: #4A4A6A;
+    --color-strike-through: #999999; /* For strikethrough text */
 }
-
 
 /* --- Base Styles & Reset --- */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
-    font-family: 'Open Sans', sans-serif; /* Default font */
-    background-color: var(--dark-bg); /* Dark background */
-    line-height: 1.6; /* Improved line height for readability */
-    color: var(--text-color); /* Default text color */
+    font-family: 'Inter', sans-serif; /* Using Inter for a clean, modern look */
+    background-color: var(--color-primary-bg);
+    line-height: 1.6;
+    color: var(--color-light-text);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* --- Utility Classes --- */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Prevents extra space below images */
+}
+
+a {
+    text-decoration: none;
+    color: var(--color-accent-1);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--color-accent-2);
+}
+
+/* --- Layout & Container --- */
 .container {
-    max-width: 1140px;
+    max-width: 1200px; /* Slightly wider container */
     margin-left: auto;
     margin-right: auto;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 20px; /* More padding for content */
-    padding-bottom: 20px; /* More padding for content */
+    padding: 20px 25px; /* More padding for better spacing */
 }
 
-.bordered-top {
-    border-top: 1px solid var(--border-color);
-    padding-top: 40px; /* More padding for sections with top border */
-}
-
-.text-center {
-    text-align: center;
-}
-
-.highlight-primary {
-    color: var(--primary-color);
+.section-divider {
+    border-top: 1px solid var(--color-border);
+    padding-top: 50px; /* More space above the border */
 }
 
 /* --- Typography --- */
 .main-heading {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 800; /* Made bolder for impact */
-    font-size: 64px; /* Large for desktop */
-    color: var(--text-color);
-    text-transform: capitalize;
+    font-weight: 800; /* Make it bolder */
+    font-size: 68px; /* Slightly smaller for better fit */
+    color: var(--color-white-text);
+    text-transform: uppercase; /* More impactful */
     text-align: center;
-    line-height: 1.1;
+    line-height: 1.1; /* Tighter line height */
     margin-top: 0;
     margin-bottom: 30px;
-}
-
-.sub-heading {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 28px;
-    color: var(--dark-bg); /* Contrast with yellow bar */
-    text-align: center;
-    line-height: 1.2;
-    margin-top: 0;
-    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Subtle text shadow */
 }
 
 .sub-text {
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    font-weight: 300; /* Lighter font weight */
-    color: var(--subtle-text);
-    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 300;
+    color: var(--color-light-text);
     text-align: center;
-    padding-left: 150px; /* Reduced padding slightly for text blocks */
-    padding-right: 150px;
-    margin-bottom: 40px; /* More space below */
+    line-height: 1.5;
+    padding: 0 10%; /* Responsive padding */
+    margin-bottom: 40px;
+}
+
+.offer-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--color-primary-bg); /* Dark text on light background */
+    text-align: center;
+    margin: 0;
+}
+
+.offer-text strike {
+    color: var(--color-strike-through);
+    text-decoration: line-through;
 }
 
 .section-title {
+    font-family: 'Montserrat', sans-serif;
     font-size: 48px;
-    color: var(--text-color);
+    color: var(--color-white-text);
     text-align: center;
     margin-top: 0;
     margin-bottom: 30px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 .section-description {
     font-size: 18px;
     line-height: 1.6;
-    color: var(--subtle-text);
+    color: var(--color-light-text);
     text-align: center;
-    margin-bottom: 25px;
-    margin-top: 0;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-weight: 400;
+    margin-bottom: 40px;
+    padding: 0 5%;
 }
 
 .feature-title {
-    color: var(--text-color);
-    text-align: center; /* Centered feature titles for cleaner look */
-    font-size: 24px;
-    margin-top: 15px;
-    margin-bottom: 8px;
+    color: var(--color-white-text);
+    text-align: center; /* Centered for better visual balance in grid */
+    font-size: 28px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
 }
 
 .feature-description {
-    color: var(--subtle-text);
-    text-align: center; /* Centered feature descriptions */
-    font-size: 15px;
+    color: var(--color-light-text);
+    text-align: center;
+    font-size: 16px;
     margin-top: 0;
     margin-bottom: 0;
 }
 
+.highlight-primary {
+    color: var(--color-accent-1);
+    font-weight: 900;
+}
+
 /* --- Section Backgrounds & Spacing --- */
 .top-offer-bar {
-    background-color: var(--top-bar-bg); /* Amber */
-    padding-top: 15px;
-    padding-bottom: 15px;
+    background: linear-gradient(90deg, #FFD700, #FF8C00); /* Gold to Orange gradient */
+    padding: 12px 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .hero-section,
-.buy-now-middle,
-.final-buy-now-section {
-    background-color: var(--dark-bg);
-    padding-top: 60px;
-    padding-bottom: 60px;
+.mid-cta-section,
+.final-cta-section {
+    background-color: var(--color-primary-bg);
+    padding: 80px 0;
     text-align: center;
 }
 
 .why-us-section,
 .why-themes-section,
-.theme-list-section,
+.template-collection-section,
 .faq-section {
-    background-color: var(--light-bg); /* Slightly lighter dark grey for contrast */
-    padding-top: 60px;
-    padding-bottom: 60px;
+    background-color: var(--color-secondary-bg);
+    padding: 80px 0;
     text-align: center;
 }
 
 .site-footer {
-    background-color: var(--dark-bg);
-    padding: 30px;
+    background-color: var(--color-primary-bg);
+    padding: 40px 0;
     text-align: center;
-    color: var(--subtle-text);
+    color: var(--color-light-text);
     font-size: 14px;
+    border-top: 1px solid var(--color-border);
 }
-.footer-logo {
-    width: 35px; /* Adjust size */
-    margin-bottom: 15px;
+
+.footer-text {
+    margin-bottom: 10px;
+}
+
+.footer-disclaimer {
+    font-size: 12px;
+    color: rgba(224, 224, 224, 0.6);
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 /* --- Image Styles --- */
 .image-container {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     display: flex;
     justify-content: center;
+    align-items: center; /* Vertically align image if container has height */
 }
 
 .hero-image {
-    border: 5px solid var(--primary-color); /* Blue border */
+    border: 6px solid var(--color-accent-1); /* Accent border */
     border-radius: 20px; /* Slightly less rounded */
-    box-shadow: 0px 0px 15px 3px rgba(63, 81, 181, 0.5); /* Blue shadow */
-    max-width: 85%; /* Slightly wider image */
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.5); /* More pronounced shadow */
+    max-width: 85%;
     height: auto;
-    display: block;
+    transition: transform 0.3s ease;
+}
+
+.hero-image:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
 }
 
 .theme-list-image {
-    max-width: 90%; /* Wider on desktop */
+    max-width: 100%;
     height: auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
-    border-radius: 8px; /* Slightly rounded corners */
+    margin: 0 auto 30px auto;
+    border-radius: 10px;
+    box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4);
 }
 
 /* --- Button Styles --- */
 .btn-container {
-    margin-top: 40px;
-    margin-bottom: 40px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     text-align: center;
 }
 
@@ -199,122 +224,170 @@ body {
     align-items: center;
     justify-content: center;
     text-decoration: none;
-    background-color: var(--primary-color); /* Primary Blue */
-    color: var(--text-color);
-    border-radius: 9999px; /* Fully rounded pill shape */
-    padding: 12px 60px; /* Adjusted padding */
-    font-size: 28px; /* Main text size */
+    background: linear-gradient(45deg, var(--color-accent-1), #FF6F00); /* Gradient button */
+    color: var(--color-white-text);
+    border-radius: 50px; /* Pill shape */
+    padding: 15px 60px; /* Adjusted padding for better proportions */
+    font-size: 32px;
     font-weight: 700;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: all 0.3s ease;
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* Stronger shadow */
     margin: 20px;
+    position: relative;
+    overflow: hidden; /* For hover effects */
 }
 
 .btn:hover {
-    background-color: #3949ab; /* Slightly darker blue on hover */
-    transform: translateY(-2px); /* Subtle lift effect */
+    background: linear-gradient(45deg, #FF6F00, var(--color-accent-1)); /* Reverse gradient on hover */
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
+    transform: translateY(-3px); /* Lift button slightly */
 }
 
 .btn-main-text {
     display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn-sub-text {
     display: block;
-    font-size: 18px; /* Sub text size */
+    font-size: 18px;
     font-weight: 400;
     opacity: 0.9;
-    margin-top: 2px; /* Space between main and sub text */
+    margin-top: 5px;
 }
+
+/* Pulse Animation for CTA Buttons */
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); }
+    50% { transform: scale(1.03); box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5); }
+    100% { transform: scale(1); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); }
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
 
 /* --- Feature Grid (Why Us / Why Our Themes) --- */
 .grid-4-columns {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjusted minmax for smaller items */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Larger min-width for columns */
     gap: 30px; /* More space between items */
-    padding: 30px; /* Padding inside the grid container */
+    padding: 20px 0;
 }
 
 .feature-box {
-    background-color: var(--light-bg); /* Same as section background */
+    background-color: var(--color-primary-bg); /* Darker background for boxes */
     padding: 30px;
-    border-radius: 10px;
-    text-align: center; /* Centered content within box */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle box shadow */
-    transition: transform 0.2s ease;
+    border-radius: 12px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow for boxes */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content within feature box */
+    text-align: center;
 }
 
 .feature-box:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
+    transform: translateY(-5px); /* Lift on hover */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
 .icon-container {
-    text-align: center; /* Center the image/icon */
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px; /* Fixed size for consistency */
+    height: 80px;
+    border-radius: 50%; /* Circular background for icons */
+    background: linear-gradient(45deg, var(--color-accent-2), var(--color-accent-1)); /* Gradient background for icon circle */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .feature-icon {
-    width: 60px; /* Specific size for clarity */
-    height: 60px; /* Specific size for clarity */
-    object-fit: contain; /* Ensures image fits within bounds */
+    width: 60%; /* Adjust size of small feature icons within circle */
+    height: auto;
+    filter: invert(100%); /* Make icons white if they are dark */
 }
 
 .icon-large-accent {
-    font-size: 55px;
-    color: var(--accent-color); /* Orange for these icons */
-    margin-bottom: 15px;
+    font-size: 48px; /* Larger icons */
+    color: var(--color-primary-bg); /* Dark color on accent background */
+    margin: 0; /* Reset margin from Font Awesome default */
+    filter: none; /* No invert needed for Font Awesome icons if color is set */
 }
 
-/* --- FAQ Section - All Expanded --- */
+/* --- FAQ Section (Expanded) --- */
 .faq-list {
     margin-top: 30px;
-    padding: 0 20px; /* Padding inside FAQ list */
+    padding: 0 10px;
 }
 
 .faq-item {
-    background-color: var(--dark-bg); /* Darker background for FAQ items */
-    padding: 25px 30px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    background-color: var(--color-primary-bg); /* Darker background for FAQ items */
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-align: left; /* Keep text left-aligned */
 }
 
 .faq-question {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--color-white-text);
+    margin-bottom: 15px;
+    position: relative;
+    padding-left: 35px; /* Space for a decorative element */
+}
+
+.faq-question::before {
+    content: '\2713'; /* Checkmark symbol */
+    font-family: 'Font Awesome 5 Free'; /* Using Font Awesome for the checkmark */
+    font-weight: 900;
+    color: var(--color-accent-1);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 20px;
-    color: var(--text-color);
-    margin-top: 0;
-    margin-bottom: 10px;
-    font-weight: 600;
-    text-align: left; /* Keep questions left-aligned */
 }
 
 .faq-answer-par {
     font-size: 16px;
     line-height: 1.7;
-    color: var(--subtle-text);
-    margin: 0;
-    text-align: left; /* Keep answers left-aligned */
+    color: var(--color-light-text);
+    margin-bottom: 0;
 }
 
+.support-email-link {
+    color: var(--color-accent-2); /* Gold for email link */
+    font-weight: 500;
+}
 
 /* --- Responsive Adjustments (Media Queries) --- */
 
-/* Extra small devices (phones, <576px) */
+/* Small devices (phones, 575.98px and down) */
 @media (max-width: 575.98px) {
+    .container {
+        padding: 15px 15px;
+    }
+
     .main-heading {
         font-size: 38px;
         margin-bottom: 20px;
     }
-    .sub-heading {
-        font-size: 20px;
-    }
     .sub-text {
         font-size: 16px;
-        padding-left: 15px;
-        padding-right: 15px;
+        padding: 0 5%;
         margin-bottom: 30px;
+    }
+    .offer-text {
+        font-size: 18px;
     }
     .section-title {
         font-size: 32px;
@@ -322,123 +395,102 @@ body {
     }
     .section-description {
         font-size: 15px;
+        margin-bottom: 30px;
+        padding: 0 2%;
     }
     .hero-image {
         max-width: 95%;
-        border-width: 3px;
+        border-width: 4px;
     }
     .btn {
-        width: 90%;
-        padding: 10px 20px;
+        width: 95%; /* Make button almost full width */
+        padding: 12px 20px;
+        font-size: 24px;
         margin: 15px 0;
-        font-size: 22px;
     }
     .btn-sub-text {
         font-size: 15px;
     }
     .grid-4-columns {
-        grid-template-columns: 1fr; /* Single column on very small screens */
-        gap: 20px;
-        padding: 15px;
+        grid-template-columns: 1fr; /* Single column on small screens */
+        gap: 25px;
     }
     .feature-box {
         padding: 20px;
     }
-    .feature-icon {
-        width: 50px;
-        height: 50px;
-    }
-    .icon-large-accent {
-        font-size: 45px;
-    }
     .feature-title {
-        font-size: 20px;
+        font-size: 24px;
     }
     .feature-description {
         font-size: 14px;
     }
-    .faq-list {
-        padding: 0 10px;
+    .icon-container {
+        width: 70px;
+        height: 70px;
     }
-    .faq-item {
-        padding: 20px 25px;
+    .icon-large-accent {
+        font-size: 40px;
     }
     .faq-question {
+        font-size: 18px;
+        padding-left: 30px;
+    }
+    .faq-question::before {
         font-size: 18px;
     }
     .faq-answer-par {
         font-size: 14px;
     }
-    .container {
-        padding-left: 10px;
-        padding-right: 10px;
+    .site-footer {
+        padding: 30px 15px;
     }
 }
 
-/* Small devices (phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) {
+/* Medium devices (tablets, 576px to 991.98px) */
+@media (min-width: 576px) and (max-width: 991.98px) {
     .main-heading {
-        font-size: 48px;
+        font-size: 50px;
     }
     .sub-text {
         font-size: 18px;
-        padding-left: 50px;
-        padding-right: 50px;
+        padding: 0 8%;
     }
     .section-title {
         font-size: 40px;
+    }
+    .section-description {
+        font-size: 16px;
+        padding: 0 5%;
     }
     .hero-image {
         max-width: 90%;
     }
     .btn {
-        padding: 12px 40px;
-        font-size: 26px;
+        padding: 14px 40px;
+        font-size: 28px;
     }
     .btn-sub-text {
         font-size: 16px;
     }
     .grid-4-columns {
-        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* 2 columns or more */
         gap: 25px;
-        padding: 20px;
-    }
-    .feature-box {
-        padding: 25px;
-    }
-    .feature-icon {
-        width: 55px;
-        height: 55px;
-    }
-    .icon-large-accent {
-        font-size: 50px;
     }
     .feature-title {
-        font-size: 22px;
+        font-size: 26px;
     }
     .feature-description {
         font-size: 15px;
     }
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .main-heading {
-        font-size: 56px;
+    .icon-large-accent {
+        font-size: 45px;
     }
-    .sub-text {
-        padding-left: 100px;
-        padding-right: 100px;
-    }
-    .section-title {
-        font-size: 44px;
-    }
-    .grid-4-columns {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Can maintain 3-4 columns */
+    .faq-question {
+        font-size: 20px;
     }
 }
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-    /* Most styles default to these larger sizes */
+    /* Default styles already optimized for large screens */
 }
