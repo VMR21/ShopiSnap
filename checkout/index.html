@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Checkout | Premium Shopify Templates & SEO Checklist</title>
+    <meta name="description" content="Complete your purchase of premium Shopify templates and get your essential SEO Checklist." />
+    <link rel="shortcut icon" href="https://img.flexifunnels.com/images/3110/g1oty_500_nikhilphalswalfavicon.png" type="image/png" />
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap">
+
+    <link rel="stylesheet" href="css/checkout.css">
+</head>
+<body>
+
+    <div class="checkout-wrapper">
+        <section class="header-banner">
+            <div class="container">
+                <h1 class="header-title">Congrats! You're just one step away from building Your First <span class="highlight-yellow">Website in Minutes!</span></h1>
+            </div>
+        </section>
+
+        <section class="checkout-content">
+            <div class="container">
+                <div class="checkout-card">
+                    <h2 class="offer-value">Worth <span class="highlight-red">₹8,50,000+</span> of Themes</h2>
+                    <h3 class="offer-price">At Just ₹249</h3>
+
+                    <div class="seo-checklist-upsell">
+                        <h4 class="upsell-title">Add the Essential SEO Checklist for just ₹149!</h4>
+                        <p class="upsell-description">Boost your store's visibility and rank higher on Google with our comprehensive, easy-to-follow SEO checklist. Don't launch without it!</p>
+                        <div class="upsell-checkbox-group">
+                            <input type="checkbox" id="addSeoChecklist" name="addSeoChecklist" checked>
+                            <label for="addSeoChecklist">Yes, add the SEO Checklist (₹149)</label>
+                        </div>
+                    </div>
+
+                    <form id="checkoutForm" class="checkout-form">
+                        <div class="form-group">
+                            <input type="text" id="fullName" name="fullName" placeholder="Full Name" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Phone Number" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="email" name="email" placeholder="Email ID" class="form-input" required>
+                        </div>
+
+                        <div class="product-summary">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th class="text-right">Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><label>500+ Premium Shopify Themes</label></td>
+                                        <td class="text-right">₹249.00</td>
+                                    </tr>
+                                    <tr id="seoChecklistRow" class="hidden">
+                                        <td><label>Essential SEO Checklist</label></td>
+                                        <td class="text-right">₹149.00</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td>Total:</td>
+                                        <td class="text-right" id="totalPrice">₹249.00</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                        <button type="button" id="proceedToPaymentBtn" class="submit-btn pulse-animation">
+                            <span class="btn-main-text">Complete My Order</span>
+                        </button>
+                    </form>
+
+                    <div class="security-badge">
+                        <img src="images/safe-payment-checkout.jpg" alt="Safe Payment Checkout" class="security-image">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="js/checkout.js"></script>
+</body>
+</html>
