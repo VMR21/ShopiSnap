@@ -3,62 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Checkout | Shopify Themes</title>
-    <meta name="description" content="Secure checkout for premium Shopify themes with optional SEO checklist.">
-    <meta name="keywords" content="Shopify themes, checkout, SEO checklist, Razorpay, online payment">
-    <link rel="canonical" href="https://yourwebsite.com/theme-checkout" /> <link rel="shortcut icon" href="https://img.flexifunnels.com/images/3110/g1oty_500_nikhilphalswalfavicon.png" type="image/png"/>
+    <title>Secure Checkout | 500+ Shopify Themes</title>
+    <meta name="description" content="Get instant access to 500+ premium Shopify themes and boost your store's visibility with our essential SEO checklist.">
+    <meta name="keywords" content="Shopify themes, website building, e-commerce, SEO, online store, business growth, Razorpay, secure payment">
+    <link rel="canonical" href="https://websiteinminute.in/theme-checkout" /> <link rel="shortcut icon" href="https://img.flexifunnels.com/images/3110/g1oty_500_nikhilphalswalfavicon.png" type="image/png"/>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <style>
-        /* Basic Styling to make the form presentable */
+        :root {
+            --primary-color: #277BFF; /* A vibrant blue */
+            --secondary-color: #FFC107; /* Your existing yellow for highlights */
+            --success-color: #28a745; /* Green for success/highlights */
+            --danger-color: #dc3545; /* Red for emphasis/old price */
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-light: #f8f9fa;
+            --bg-body: #eef2f5;
+            --border-color: #ddd;
+        }
+
+        /* General Body & Container */
         body {
             font-family: 'Open Sans', sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #f4f7f6;
+            padding: 0;
+            background-color: var(--bg-body);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            color: var(--text-dark);
+            line-height: 1.6;
         }
 
-        .container {
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            max-width: 600px;
+        .checkout-wrapper {
+            max-width: 700px; /* Slightly wider for better content display */
             width: 100%;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden; /* For rounded corners on sections */
+            margin: 20px;
+        }
+
+        /* Header Section */
+        .header-section {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 30px 20px;
             text-align: center;
-        }
-
-        h1, h2, h3 {
             font-family: 'Montserrat', sans-serif;
-            color: #333;
         }
 
-        h1 {
-            font-size: 2em;
-            margin-bottom: 15px;
+        .header-section h1 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin: 0;
+            line-height: 1.2;
         }
 
-        h2 {
-            font-size: 1.5em;
-            color: #d9534f; /* Red for emphasis */
-            margin-bottom: 20px;
+        .header-section h1 span {
+            color: var(--secondary-color);
         }
 
+        /* Main Content Section */
+        .content-section {
+            padding: 30px;
+        }
+
+        /* Highlighted Offer Box */
         .highlight-offer-box {
-            border: 2px solid #28a745; /* Green border */
+            border: 2px solid var(--success-color);
             border-radius: 8px;
             padding: 25px;
             margin-bottom: 30px;
             position: relative;
             overflow: hidden;
-            background-color: #f8f9fa;
+            background-color: var(--bg-light);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .highlight-offer-box .main-offer-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.8em;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .highlight-offer-box .original-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.2em;
+            font-weight: 500;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+        .highlight-offer-box .original-price strong {
+            color: var(--danger-color);
+            text-decoration: line-through;
+        }
+
+        .highlight-offer-box .current-price {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3em; /* Very large price */
+            font-weight: 800;
+            color: var(--danger-color); /* Red for immediate attention */
+            margin-top: 10px;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        .highlight-offer-box .current-price span {
+             font-size: 0.7em; /* Smaller "₹" */
+             vertical-align: super;
+             margin-right: 5px;
+        }
+
+        .highlight-offer-box .offer-detail {
+            font-size: 1em;
+            color: var(--text-light);
+            margin-bottom: 15px;
         }
 
         .ribbon {
@@ -66,10 +133,10 @@
             top: 15px;
             right: -30px;
             width: 150px;
-            background-color: #ffc107; /* Yellow for attention */
-            color: #333;
+            background-color: var(--secondary-color);
+            color: var(--text-dark);
             text-align: center;
-            font-size: 14px;
+            font-size: 0.9em;
             font-weight: bold;
             padding: 5px 0;
             transform: rotate(45deg);
@@ -77,133 +144,243 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             z-index: 10;
         }
-
         .ribbon span {
             display: block;
             text-transform: uppercase;
         }
 
-        .seo-checklist-option {
-            margin-top: 25px;
-            margin-bottom: 25px;
-            font-size: 1.1em;
-            font-weight: 600;
-            color: #555;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap; /* Allow wrapping on small screens */
-        }
-
-        .seo-checklist-option input[type="checkbox"] {
-            margin-right: 10px;
-            transform: scale(1.5); /* Make checkbox larger */
-            cursor: pointer;
-        }
-
-        #paymentButtonContainer {
+        /* SEO Checklist Option Styling */
+        .seo-checklist-section {
+            background-color: #e6f7ff; /* Light blue background for emphasis */
+            border: 1px dashed var(--primary-color);
+            border-radius: 8px;
+            padding: 20px;
             margin-top: 30px;
-            text-align: center;
-            min-height: 60px; /* Reserve space to prevent layout shift */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            /* Flexbox makes sure the button (or loading text) is centered */
+            margin-bottom: 30px;
+            text-align: left;
         }
 
-        #paymentButtonContainer p {
-            color: #999;
-            font-size: 16px;
-        }
-
-        /* Basic form input styling */
-        .form-group {
+        .seo-checklist-section h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5em;
+            color: var(--primary-color);
+            margin-top: 0;
             margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .seo-benefits ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+
+        .seo-benefits li {
+            font-size: 1em;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .seo-benefits li i {
+            color: var(--success-color);
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        .seo-checklist-toggle {
+            font-size: 1.1em;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            padding: 10px 0;
+            border: 2px solid var(--primary-color);
+            border-radius: 5px;
+            background-color: #fff;
+            transition: background-color 0.3s ease;
+        }
+
+        .seo-checklist-toggle:hover {
+            background-color: var(--primary-color);
+            color: #fff;
+        }
+
+        .seo-checklist-toggle input[type="checkbox"] {
+            margin-right: 15px;
+            transform: scale(1.6); /* Make checkbox larger */
+            cursor: pointer;
+            accent-color: var(--success-color); /* Style the checkbox itself */
+        }
+
+        /* Form Styling */
+        .form-group {
+            margin-bottom: 20px;
             text-align: left;
         }
 
         .form-group label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
             font-weight: 600;
-            color: #333;
+            color: var(--text-dark);
+            font-size: 0.95em;
         }
 
         .form-group input[type="text"],
         .form-group input[type="email"] {
             width: 100%;
             padding: 12px 15px;
-            border: 1px solid #ccc;
+            border: 1px solid var(--border-color);
             border-radius: 5px;
             font-size: 1em;
-            box-sizing: border-box; /* Include padding and border in element's total width and height */
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(39, 123, 255, 0.25);
+            outline: none;
+        }
+
+        /* Payment Button Container */
+        #paymentButtonContainer {
+            margin-top: 30px;
+            text-align: center;
+            min-height: 60px; /* Reserve space */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Allows message below button */
+        }
+
+        #paymentButtonContainer p {
+            color: var(--text-light);
+            font-size: 0.9em;
+            margin-top: 10px; /* Space above the message if button loads */
+        }
+
+        /* Footer / Trust Section */
+        .trust-badges {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-color);
+        }
+        .trust-badges img {
+            max-width: 100%;
+            height: auto;
         }
 
         /* Responsive adjustments */
-        @media (max-width: 575.98px) {
-            .container {
+        @media (max-width: 768px) {
+            .checkout-wrapper {
+                margin: 10px;
+            }
+            .header-section h1 {
+                font-size: 2em;
+            }
+            .highlight-offer-box .current-price {
+                font-size: 2.5em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-section h1 {
+                font-size: 1.6em;
+            }
+            .content-section {
                 padding: 20px;
             }
-            h1 {
-                font-size: 1.5em;
+            .highlight-offer-box .main-offer-title {
+                font-size: 1.4em;
             }
-            h2 {
-                font-size: 1.2em;
-            }
-            .seo-checklist-option {
-                font-size: 1em;
-                flex-direction: column;
-            }
-            .seo-checklist-option input[type="checkbox"] {
-                margin-right: 0;
-                margin-bottom: 10px;
+            .highlight-offer-box .current-price {
+                font-size: 2em;
             }
             .ribbon {
                 width: 100px;
                 right: -20px;
-                font-size: 10px;
+                font-size: 0.8em;
+            }
+            .seo-checklist-toggle {
+                flex-direction: column;
+                padding: 15px;
+            }
+            .seo-checklist-toggle input[type="checkbox"] {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            .seo-benefits li {
+                font-size: 0.9em;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Congrats! You're just one step away from building Your First <span style="color:#ffff00;">Website in Minutes!</span></h1>
+    <div class="checkout-wrapper">
+        <header class="header-section">
+            <h1>Congrats! You're just one step away from building Your First <span class="highlight">Website in Minutes!</span></h1>
+        </header>
 
-        <div class="highlight-offer-box">
-            <div class="ribbon"><span>Limited Time</span></div>
-            <h2>Worth <span style="color:#ff0000;">₹8,50,000+</span> of Themes</h2>
-            <h1>At Just ₹<span id="priceDisplay">249</span></h1>
-            <p class="offer-detail">Get instant access to 500+ premium Shopify themes!</p>
-
-            <div class="seo-checklist-option">
-                <input type="checkbox" id="seoChecklist" onchange="updatePaymentButton()">
-                <label for="seoChecklist">Add SEO Checklist to Your Order (Worth ₹1,500) for Just ₹149 extra!</label>
-            </div>
-        </div>
-
-        <form id="checkoutForm">
-            <div class="form-group">
-                <label for="fullName">Full Name</label>
-                <input type="text" id="fullName" name="fullName" placeholder="Your Full Name" required>
-            </div>
-            <div class="form-group">
-                <label for="phoneNumber">Phone Number</label>
-                <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Your Phone Number" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email ID</label>
-                <input type="email" id="email" name="email" placeholder="Your Email ID" required>
+        <main class="content-section">
+            <div class="highlight-offer-box">
+                <div class="ribbon"><span>Limited Time</span></div>
+                <h2 class="main-offer-title">Unlock Your Store's Full Potential!</h2>
+                <p class="original-price">Original Value: <strong>₹8,50,000+</strong> of Themes</p>
+                <p class="offer-detail">Get instant access to 500+ premium Shopify themes!</p>
+                <h1 class="current-price">₹<span id="priceDisplay">249</span></h1>
             </div>
 
-            <div id="paymentButtonContainer">
-                <p>Loading payment button...</p>
+            <div class="seo-checklist-section">
+                <h3><i class="fas fa-chart-line"></i> Boost Your Store's Visibility!</h3>
+                <p style="text-align: center; color: var(--text-dark); margin-bottom: 20px;">
+                    Having a great website is just the start. To get customers, you need to be **found**!
+                    Our exclusive SEO Checklist (worth ₹1,500) will give you the exact steps to rank higher on Google.
+                </p>
+                <div class="seo-benefits">
+                    <ul>
+                        <li><i class="fas fa-check-circle"></i> **Skyrocket Search Rankings:** Get your store to the top of Google results.</li>
+                        <li><i class="fas fa-check-circle"></i> **Drive Free Organic Traffic:** Attract more potential customers without spending on ads.</li>
+                        <li><i class="fas fa-check-circle"></i> **Increase Sales & Conversions:** More visibility means more sales for your business.</li>
+                        <li><i class="fas fa-check-circle"></i> **Outrank Competitors:** Gain a crucial competitive edge.</li>
+                        <li><i class="fas fa-check-circle"></i> **Easy-to-Follow, Actionable Steps:** Simple strategies even for beginners.</li>
+                    </ul>
                 </div>
-        </form>
+                <label for="seoChecklist" class="seo-checklist-toggle">
+                    <input type="checkbox" id="seoChecklist" onchange="updatePaymentButton()">
+                    Yes! I want my store to rank higher & get more sales for just ₹149 extra!
+                </label>
+            </div>
 
-        <div style="margin-top: 30px;">
-            <img src="https://img.flexifunnels.com/images/3110/cynzm_500_safepaymentcheckoutCopy.jpg" alt="Secure Payment" style="max-width: 100%; height: auto;">
-        </div>
+            <form id="checkoutForm">
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number</label>
+                    <input type="text" id="phoneNumber" name="phoneNumber" placeholder="Enter your 10-digit phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email ID</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                </div>
+
+                <div id="paymentButtonContainer">
+                    <p>Preparing your secure payment...</p>
+                    </div>
+            </form>
+
+            <div class="trust-badges">
+                <img src="https://img.flexifunnels.com/images/3110/cynzm_500_safepaymentcheckoutCopy.jpg" alt="Secure Payment with SSL and Major Cards" title="100% Secure Payment">
+            </div>
+        </main>
     </div>
 
     <script>
@@ -212,8 +389,8 @@
             const paymentButtonContainer = document.getElementById('paymentButtonContainer');
             const priceDisplay = document.getElementById('priceDisplay');
 
-            const BASE_PRICE_BUTTON_ID = "pl_QZuba33aCzBSdT"; // For ₹249
-            const WITH_SEO_BUTTON_ID = "pl_QZuk9rLMOZNtnC";   // For ₹398
+            const BASE_PRICE_BUTTON_ID = "pl_QZuba33aCzBSdT"; // For ₹249 (Themes only)
+            const WITH_SEO_BUTTON_ID = "pl_QZuk9rLMOZNtnC";   // For ₹398 (Themes + SEO Checklist)
 
             let currentButtonId;
             let currentPrice;
@@ -230,7 +407,7 @@
             priceDisplay.textContent = currentPrice;
 
             // Clear any previously rendered Razorpay button and its container content
-            paymentButtonContainer.innerHTML = '';
+            paymentButtonContainer.innerHTML = '<p>Preparing your secure payment...</p>'; // Show loading message again
 
             // Create a new form element for the Razorpay button
             const razorpayForm = document.createElement('form');
@@ -241,24 +418,21 @@
             razorpayScript.setAttribute('data-payment_button_id', currentButtonId);
             razorpayScript.async = true; // Essential for async loading
 
-            // Append the script *inside* the form tag
+            // Append the script *inside* the form tag, as Razorpay requires
             razorpayForm.appendChild(razorpayScript);
 
             // Append the form (which now contains the script) to the paymentButtonContainer
+            // This will trigger Razorpay's script to render the button.
             paymentButtonContainer.appendChild(razorpayForm);
 
-            // Add an error handler for the script
+            // Add an error handler for the script in case it fails to load
             razorpayScript.onerror = () => {
-                paymentButtonContainer.innerHTML = '<p style="text-align: center; color: red;">Failed to load payment button. Please try again.</p>';
+                paymentButtonContainer.innerHTML = '<p style="text-align: center; color: var(--danger-color);">Failed to load payment button. Please try again.</p>';
             };
 
-            // Although Razorpay's script usually handles its own rendering,
-            // we can add an onload to ensure the loading message is gone.
-            razorpayScript.onload = () => {
-                // If the script successfully loaded and appended the button,
-                // the content of paymentButtonContainer will now be the button itself.
-                // No need to explicitly remove the loading text here as it was already cleared.
-            };
+            // You can optionally add a success message or hide the "Preparing..." message
+            // once the button is confirmed to be rendered. For Razorpay payment button,
+            // the button usually replaces the script itself, so the 'p' tag above is cleared.
         }
 
         // Call the function on page load to set the initial button and price
