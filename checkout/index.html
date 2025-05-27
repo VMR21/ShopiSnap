@@ -108,6 +108,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            /* Flexbox makes sure the button (or loading text) is centered */
         }
 
         #paymentButtonContainer p {
@@ -197,7 +198,7 @@
 
             <div id="paymentButtonContainer">
                 <p>Loading payment button...</p>
-            </div>
+                </div>
         </form>
 
         <div style="margin-top: 30px;">
@@ -205,15 +206,12 @@
         </div>
     </div>
 
-    <script src="https://checkout.razorpay.com/v1/payment-button.js"></script>
-
     <script>
         function updatePaymentButton() {
             const seoChecklist = document.getElementById('seoChecklist');
             const paymentButtonContainer = document.getElementById('paymentButtonContainer');
             const priceDisplay = document.getElementById('priceDisplay');
 
-            // Define your Razorpay Payment Button IDs
             const BASE_PRICE_BUTTON_ID = "pl_QZuba33aCzBSdT"; // For ₹249
             const WITH_SEO_BUTTON_ID = "pl_QZuk9rLMOZNtnC";   // For ₹398
 
@@ -231,26 +229,36 @@
             // Update the displayed price
             priceDisplay.textContent = currentPrice;
 
-            // Clear existing button and replace with the new one
-            // This is the crucial part for dynamic Razorpay button updates
-            paymentButtonContainer.innerHTML = ''; // Clear existing content
+            // Clear any previously rendered Razorpay button and its container content
+            paymentButtonContainer.innerHTML = '';
 
-            const formElement = document.createElement('form');
-            // The Razorpay payment button script expects data attributes on the form itself
-            formElement.setAttribute('data-payment_button_id', currentButtonId);
+            // Create a new form element for the Razorpay button
+            const razorpayForm = document.createElement('form');
 
-            // Append the form to the container. Razorpay's script, already loaded,
-            // will then "find" this form and render the button inside it.
-            paymentButtonContainer.appendChild(formElement);
+            // Create the script element for the Razorpay button and set its attributes
+            const razorpayScript = document.createElement('script');
+            razorpayScript.src = "https://checkout.razorpay.com/v1/payment-button.js";
+            razorpayScript.setAttribute('data-payment_button_id', currentButtonId);
+            razorpayScript.async = true; // Essential for async loading
 
-            // Re-initialize or re-render the Razorpay button.
-            // This is a common pattern for dynamically changing Razorpay buttons.
-            // We can re-call the Razorpay script's method or simply rely on its mutation observer
-            // if it exists, or just ensure the form is added correctly.
-            // For Razorpay's payment-button.js, simply changing the data attribute on the form
-            // and re-appending the form is usually enough if the script itself is loaded.
-            // If it doesn't re-render, you might need to manually trigger a re-render.
-            // In many cases, just adding the form with the new data-attribute works.
+            // Append the script *inside* the form tag
+            razorpayForm.appendChild(razorpayScript);
+
+            // Append the form (which now contains the script) to the paymentButtonContainer
+            paymentButtonContainer.appendChild(razorpayForm);
+
+            // Add an error handler for the script
+            razorpayScript.onerror = () => {
+                paymentButtonContainer.innerHTML = '<p style="text-align: center; color: red;">Failed to load payment button. Please try again.</p>';
+            };
+
+            // Although Razorpay's script usually handles its own rendering,
+            // we can add an onload to ensure the loading message is gone.
+            razorpayScript.onload = () => {
+                // If the script successfully loaded and appended the button,
+                // the content of paymentButtonContainer will now be the button itself.
+                // No need to explicitly remove the loading text here as it was already cleared.
+            };
         }
 
         // Call the function on page load to set the initial button and price
