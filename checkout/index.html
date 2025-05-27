@@ -120,25 +120,40 @@
     <script src="https://assets.flexifunnels.com/js/ft-checkout.js"></script>
     <script src="https://assets.flexifunnels.com/js/ft-lazy-loading.js"></script>
 
-    <script>
-        function updatePaymentButton() {
-            const seoChecklist = document.getElementById('seoChecklist');
-            const paymentButtonContainer = document.getElementById('paymentButtonContainer');
-            const priceDisplay = document.getElementById('priceDisplay');
+<script>
+    function updatePaymentButton() {
+        const seoChecklist = document.getElementById('seoChecklist');
+        const paymentButtonContainer = document.getElementById('paymentButtonContainer');
+        const priceDisplay = document.getElementById('priceDisplay');
 
-            if (seoChecklist.checked) {
-                // If SEO checklist is selected (398)
-                paymentButtonContainer.innerHTML = '<form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_QZuk9rLMOZNtnC" async> </script> </form>';
-                priceDisplay.textContent = '398';
-            } else {
-                // If SEO checklist is not selected (249)
-                paymentButtonContainer.innerHTML = '<form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_QZuba33aCzBSdT" async> </script> </form>';
-                priceDisplay.textContent = '249';
-            }
+        // Clear any existing Razorpay button and its script
+        paymentButtonContainer.innerHTML = '';
+
+        // Create a new form element
+        const formElement = document.createElement('form');
+
+        // Create a new script element for the Razorpay button
+        const scriptElement = document.createElement('script');
+        scriptElement.src = "https://checkout.razorpay.com/v1/payment-button.js";
+        scriptElement.async = true; // Essential for async loading
+
+        if (seoChecklist.checked) {
+            // If SEO checklist is selected (398)
+            scriptElement.dataset.payment_button_id = "pl_QZuk9rLMOZNtnC";
+            priceDisplay.textContent = '398';
+        } else {
+            // If SEO checklist is not selected (249)
+            scriptElement.dataset.payment_button_id = "pl_QZuba33aCzBSdT";
+            priceDisplay.textContent = '249';
         }
 
-        // Call the function on page load to set the initial button
-        document.addEventListener('DOMContentLoaded', updatePaymentButton);
-    </script>
+        // Append the script to the form, and the form to the container
+        formElement.appendChild(scriptElement);
+        paymentButtonContainer.appendChild(formElement);
+    }
+
+    // Call the function on page load to set the initial button
+    document.addEventListener('DOMContentLoaded', updatePaymentButton);
+</script>
 </body>
 </html>
