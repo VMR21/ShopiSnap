@@ -1,0 +1,431 @@
+/* --- Base Styles & Reset --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif; /* Default font */
+    background-color: #ffffff; /* White background */
+    line-height: 1.5; /* Default line height */
+    color: #000000; /* Default text color */
+}
+
+/* --- Utility Classes --- */
+.container {
+    max-width: 1140px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.bordered-top {
+    border-top: 1px solid #5c5c5c;
+    padding-top: 25px; /* Adjust as needed */
+}
+
+.text-center {
+    text-align: center;
+}
+
+.highlight-red {
+    color: #ff3130;
+}
+
+/* --- Typography --- */
+.main-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* Originally 400 for first part, then 700. We'll simplify to 700 for main sections */
+    font-size: 70px; /* Large for desktop */
+    color: #FFFFFF;
+    text-transform: capitalize;
+    text-align: center;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 25px; /* Adjust spacing */
+}
+
+.sub-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400; /* As in original */
+    font-size: 23px;
+    color: #000000;
+    text-align: center;
+    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.sub-text {
+    font-family: 'Roboto', sans-serif; /* Original used Roboto and Montserrat. We'll pick Roboto for this kind of text */
+    font-size: 20px; /* For desktop */
+    font-weight: 100;
+    color: #c2c2c2;
+    text-transform: capitalize;
+    line-height: 1.5;
+    text-align: center;
+    padding-left: 250px; /* Large padding for desktop */
+    padding-right: 250px; /* Large padding for desktop */
+    margin-bottom: 30px; /* Add some space below */
+}
+
+.section-title {
+    font-size: 50px;
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.section-description {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #BDBDBD; /* A lighter gray for descriptions */
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    font-weight: 400;
+}
+
+.feature-title {
+    color: #FFFFFF;
+    text-align: left; /* Changed from center in original for consistent left-align with icon */
+    font-size: 25px;
+    margin-top: 15px; /* Space from icon */
+    margin-bottom: 5px;
+}
+
+.feature-description {
+    color: #BDBDBD;
+    text-align: left;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* --- Section Backgrounds & Spacing --- */
+.top-offer-bar {
+    background-color: #FBC02D; /* Yellow */
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.hero-section,
+.buy-now-middle,
+.final-buy-now-section {
+    background-color: #081a28; /* Dark Blue */
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.why-us-section,
+.why-themes-section,
+.theme-list-section,
+.faq-section {
+    background-color: #263238; /* Dark Gray */
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.site-footer {
+    background-color: #081a28; /* Same as hero */
+    padding: 20px;
+    text-align: center;
+    color: #c2c2c2;
+    font-size: 14px;
+}
+.footer-logo {
+    width: 30px; /* Adjust size */
+    margin-bottom: 10px;
+}
+
+/* --- Image Styles --- */
+.image-container {
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image {
+    border: 5px solid #ff0000;
+    border-radius: 25px;
+    box-shadow: 0px 0px 10px 1px #c69898;
+    max-width: 80%; /* For desktop */
+    height: auto;
+    display: block; /* To remove extra space below image */
+}
+
+.theme-list-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+}
+
+/* --- Button Styles --- */
+.btn-container {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.btn {
+    display: inline-flex; /* Use flexbox for main and sub text */
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #ff3130; /* Red */
+    color: #ffffff;
+    border-radius: 95px; /* Pill shape */
+    padding: 9px 100px; /* Adjust padding for desired size */
+    font-size: 30px; /* Main text size */
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    border: none; /* Remove default button border */
+    cursor: pointer;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset; /* Subtle inner shadow */
+    margin: 25px; /* Add margin around button */
+}
+
+.btn:hover {
+    background-color: #e62c2c; /* Slightly darker red on hover */
+}
+
+.btn-main-text {
+    display: block;
+}
+
+.btn-sub-text {
+    display: block;
+    font-size: 20px; /* Sub text size */
+    font-weight: 100;
+    opacity: 0.8;
+}
+
+/* --- Feature Grid (Why Us / Why Our Themes) --- */
+.grid-4-columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+    gap: 20px; /* Space between items */
+    padding: 25px; /* Padding inside the grid container */
+}
+
+.feature-box {
+    background-color: #263238; /* Same as section background */
+    padding: 25px;
+    border-radius: 15px;
+    text-align: left; /* Icons/titles align left */
+}
+
+.icon-container {
+    text-align: left; /* Aligns the image/icon within its container */
+    margin-bottom: 15px;
+}
+
+.feature-icon {
+    width: 30%; /* Adjust size of small feature icons */
+    height: auto;
+}
+
+.icon-large-yellow {
+    font-size: 50px;
+    color: #FFC107; /* Yellow for these icons */
+    text-align: left;
+    margin-bottom: 10px; /* Space below icon */
+}
+
+/* --- FAQ Accordion --- */
+.accordion-container {
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.accordion-item {
+    margin-bottom: 10px;
+    width: 100%;
+    display: inline-block;
+}
+
+.accordion-button {
+    background-color: #4b494d; /* Darker gray for button */
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px; /* Adjust padding */
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    border-radius: 5px; /* Slightly rounded corners */
+    transition: background-color 0.3s ease;
+}
+
+.accordion-button:hover {
+    background-color: #5a585c;
+}
+
+.faq-icon {
+    margin-right: 10px;
+    font-size: 18px; /* Adjust icon size */
+    transition: transform 0.3s ease; /* For rotation */
+}
+
+.accordion-button.active .faq-icon {
+    transform: rotate(45deg); /* Rotate plus to become cross */
+}
+
+.faq-title {
+    font-size: inherit; /* Inherit from button */
+    font-weight: inherit; /* Inherit from button */
+    margin: 0;
+    padding: 0;
+}
+
+.accordion-content {
+    display: none; /* Hidden by default */
+    overflow: hidden;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: #343a40; /* Slightly lighter than section for content */
+    color: #FFFFFF;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    max-height: 0; /* Will be animated by JS */
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Smooth animation */
+}
+
+.accordion-content.show {
+    max-height: 200px; /* Adjust to content height or use JS to calculate */
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.faq-answer-par {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Responsive Adjustments (Media Queries) --- */
+
+/* Small devices (phones, 576px and down) */
+@media (max-width: 575.98px) {
+    .main-heading {
+        font-size: 37px; /* Adjust for smaller screens */
+        margin-bottom: 15px;
+    }
+    .sub-text {
+        font-size: 15px;
+        padding-left: 15px; /* Remove large padding */
+        padding-right: 15px; /* Remove large padding */
+        font-weight: 300;
+        margin-bottom: 20px;
+    }
+    .section-title {
+        font-size: 25px;
+    }
+    .hero-image {
+        max-width: 100%; /* Take full width on small screens */
+        border-width: 3px;
+    }
+    .btn {
+        width: 90%; /* Make button wider */
+        padding: 8px 0; /* Adjust padding */
+        margin: 15px 0; /* Adjust margin */
+        border-radius: 50px; /* Keep pill shape */
+        font-size: 24px;
+    }
+    .btn-sub-text {
+        font-size: 14px;
+    }
+    .feature-box {
+        padding: 15px;
+    }
+    .feature-icon {
+        width: 20%; /* Adjust size */
+    }
+    .feature-title {
+        font-size: 18px;
+    }
+    .feature-description {
+        font-size: 12px;
+    }
+    .icon-large-yellow {
+        font-size: 40px;
+        margin-left: 5px; /* Adjust if needed */
+    }
+    .accordion-button {
+        font-size: 16px;
+        padding: 12px 15px;
+    }
+    .faq-answer-par {
+        font-size: 14px;
+    }
+    .accordion-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 767.98px) and (min-width: 576px) {
+    .main-heading {
+        font-size: 45px;
+    }
+    .sub-text {
+        font-size: 18px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .section-title {
+        font-size: 35px;
+    }
+    .hero-image {
+        max-width: 90%;
+    }
+    .btn {
+        padding: 10px 50px;
+        font-size: 26px;
+    }
+    .btn-sub-text {
+        font-size: 16px;
+    }
+    .grid-4-columns {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust grid for tablets */
+    }
+    .feature-icon {
+        width: 25%;
+    }
+    .feature-title {
+        font-size: 22px;
+    }
+    .feature-description {
+        font-size: 14px;
+    }
+    .icon-large-yellow {
+        font-size: 45px;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    /* Styles for larger desktops, these are mostly default from above */
+    .sub-text {
+        padding-left: 250px;
+        padding-right: 250px;
+    }
+}
